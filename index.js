@@ -1,17 +1,12 @@
-const express = require('express');
+import express from 'express';
+import userRoutes from './src/routes/userRoute.js'
+
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.json({message:'Hola desde Docker!'});
-});
+//Routes
+app.use('/api/users',userRoutes);
 
-app.get('/1', (req, res) => {
-  res.json({message:'Respuesta 123'});
-});
-
-app.get('/2', (req, res) => {
-  res.send('Funcionaaaaaa!!!');
-});
 
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
