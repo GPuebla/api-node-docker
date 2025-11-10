@@ -15,6 +15,7 @@ dbConnection();
 
 app.use('/api/users',userRoutes);
 app.use('/ac',accountRoute);
+app.use('/books',bookRoute);
 app.use('/', (req,res)=>{res.send('Welcome 1')});
 
 
