@@ -1,11 +1,15 @@
 import express from 'express';
 import userRoutes from './src/routes/userRoute.js'
 import accountRoute from './src/routes/accountRoute.js'
+import dbConnection from './src/config/db.js'
+import bookRoute from "./src/routes/bookRoute.js";
 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
+
+dbConnection();
 
 //Routes
 

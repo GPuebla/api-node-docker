@@ -1,7 +1,8 @@
 import express from 'express';
+import accountController from '../controllers/accountController';
 
 const router = express.Router();
 
-router.get('/',(req,res)=>{res.send('Account Route')});
+router.get('/',accountController.getAllUsers);
 
 export default router
