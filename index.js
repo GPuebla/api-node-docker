@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use('/api/users',userRoutes);
 app.use('/ac',accountRoute);
-app.use('/', (req,res)=>{res.send('Welcome')});
+app.use('/', (req,res)=>{res.send('Welcome 1')});
 
 
 
