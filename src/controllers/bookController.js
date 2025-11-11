@@ -50,6 +50,27 @@ const createBook = async (req, res) => {
   }
 }
 
+const updateBook = async (req,res) => {
+  try {
+    const id = req.params.id;
+    const updatedData = req.body;
+
+    
+    const updatedBook = await Book.findByIdAndUpdate(id, updatedData, {
+      new: true, // devuelve el libro ya actualizado
+      runValidators: true, // valida según el schema
+    });
+
+    res.json({
+      message:"Libro actualizado correctamente",
+      data: updatedBook,
+    })
+
+  } catch (error) {
+    res.status(500).json({ message: "Error al actualizar el libro", error: err.message });
+  }
+}
+
 const deleteBook = async (req,res) => {
   try {
 
@@ -81,5 +102,6 @@ export default {
   getBooks,
   getBookByID,
   createBook,
+  updateBook,
   deleteBook
 }
