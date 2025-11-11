@@ -36,16 +36,50 @@ const createBook = async (req, res) => {
       author
     });
 
+    if(!title || !author){
+      return res.status(400).json({message:'Faltan campos obligatorios'})
+    }
+
     const savedBook = await newBook.save();
     res.status(200).json(savedBook);
 
   } catch (error) {
-    
+    console.error('Error al crear libro',error.message)
+    res.status(500).json({message:'Error al crear libro'})
+
   }
+}
+
+const deleteBook = async (req,res) => {
+  try {
+
+    const id = req.params.id;
+
+    if(!id){
+      return res.status(400).json({message:'El ID del libro es obligatorio'});
+    }
+
+    const deletedBook = await Book.findByIdAndDelete(id);
+
+    if(!deletedBook){
+      return res.status(404).json({message:'Libro no encontrado'})
+    }
+
+    res.status(200).json({
+      message:'Libro correctamente eliminado',
+      book: deletedBook
+    })
+    
+  } catch (error) {
+    console.error('Error interno del servidor');
+    res.status(500).json({message:'Error interno del servidor'});
+  }
+  
 }
 
 export default {
   getBooks,
   getBookByID,
-  createBook
+  createBook,
+  deleteBook
 }
