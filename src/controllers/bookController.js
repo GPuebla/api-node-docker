@@ -26,7 +26,26 @@ const getBookByID = async (req, res) => {
   }
 };
 
+const createBook = async (req, res) => {
+  try {
+
+    const {title, author} = req.body 
+
+    const newBook = new Book ({
+      title, 
+      author
+    });
+
+    const savedBook = await newBook.save();
+    res.status(200).json(savedBook);
+
+  } catch (error) {
+    
+  }
+}
+
 export default {
   getBooks,
-  getBookByID
+  getBookByID,
+  createBook
 }

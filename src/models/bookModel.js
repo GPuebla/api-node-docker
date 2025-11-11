@@ -1,10 +1,15 @@
 import mongoose from 'mongoose'
 
-const bookSckema = new mongoose.Schema({
-    title: {type: String, required: true },
-    author: {type: String, required: true }
-});
+const bookSchema= new mongoose.Schema(
+    {
+        title: {type: String, required: true },
+        author: {type: String, required: true }
+    },
+    {  
+        versionKey: false
+    }
+);
 
-const Book = mongoose.model("Book",bookSckema,"books")
+const Book = mongoose.model("Book",bookSchema,"books")
 
 export default Book;
