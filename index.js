@@ -4,6 +4,7 @@ import accountRoute from './src/routes/accountRoute.js'
 import dbConnection from './src/config/db.js'
 import bookRoute from "./src/routes/bookRoute.js";
 import notFound from "./src/middleware/notFound.js"
+import errorHandler from "./src/middleware/errorHandler.js"
 
 
 const app = express();
@@ -17,8 +18,8 @@ dbConnection();
 app.use('/api/users',userRoutes);
 app.use('/ac',accountRoute);
 app.use('/books',bookRoute);
-app.use('/', (req,res)=>{res.send('Welcome 1')});
 
 app.use(notFound);
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
