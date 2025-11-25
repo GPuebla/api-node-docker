@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const { Schema, model, Types } = mongoose;
 
 const containerSchema = new Schema({
+    number: { type:String, required:true},
     size: { type:String, required:true, enum:["20'","40'"]},
     type: { type:String, required:true, enum:["ST","HS","HC","RHC"]},
     isReefer: {type:Boolean, default:false},

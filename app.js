@@ -5,6 +5,7 @@ import bookRoute from './src/routes/bookRoute.js';
 import notFound from './src/middleware/notFound.js';
 import errorHandler from './src/middleware/errorHandler.js';
 import authorRoute from './src/routes/authorRoute.js'
+import containerRoute from './src/routes/container.route.js'
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use('/api/users', userRoutes);
 app.use('/ac', accountRoute);
 app.use('/books', bookRoute);
 app.use("/authors", authorRoute);
+app.use("/containers", containerRoute);
 
 // Middlewares de errores
 app.use(notFound);
