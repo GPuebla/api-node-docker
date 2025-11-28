@@ -9,7 +9,7 @@ const bookingSchema = new Schema({
     default: "Pendiente"
   },
 
-  containers: [{ type: Types.ObjectId, ref: "Container" }],
+  containers: [{ type: Types.ObjectId, ref: "Container"}],
 
   quantityContainers: { type: Number, required: true },
 
