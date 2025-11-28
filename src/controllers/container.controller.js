@@ -77,6 +77,17 @@ class ContainerController {
       res.status(400).json({ error: err.message });
     }
   }
+
+  // Obtener por ID
+  async deleteById(req, res) {
+    try {
+      const deletedCotainer = await containerService.deleteContainer(req.params.id);
+      res.json(deletedCotainer);
+    } catch (err) {
+      res.status(404).json({ error: err.message });
+    }
+  }
+
 }
 
 export default new ContainerController();

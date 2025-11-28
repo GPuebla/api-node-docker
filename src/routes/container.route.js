@@ -13,4 +13,6 @@ router.get("/booking/:bookingId", containerController.getByBooking);
 router.put("/:id/settings", containerController.reassignSettings);
 router.put("/:id/status", containerController.updateStatus);
 
+router.delete("/:id", containerController.deleteById);
+
 export default router;
