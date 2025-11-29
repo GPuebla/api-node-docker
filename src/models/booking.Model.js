@@ -13,7 +13,8 @@ const bookingSchema = new Schema({
 
   quantityContainers: { type: Number, required: true },
 
-  route: { type: Types.ObjectId, ref: "Route", required: true },
+  POL: { type: Types.ObjectId, ref: "Port", required: true },
+  POD: { type: Types.ObjectId, ref: "Port", required: true },
   vessel: { type: Types.ObjectId, ref: "Vessel", required: true },
   line: { type: Types.ObjectId, ref: "Line", required: true },
 
@@ -22,4 +23,4 @@ const bookingSchema = new Schema({
   consignee: { type: Types.ObjectId, ref: "Consignee", required: true }
 }, { timestamps: true });
 
-export default model("Booking", bookingSchema);
+export default model("Booking", bookingSchema,'bookings');

@@ -8,4 +8,4 @@ const consigneeSchema = new Schema({
   country: String
 });
 
-export default model("Consignee", consigneeSchema);
+export default model("Consignee", consigneeSchema, "consignees");

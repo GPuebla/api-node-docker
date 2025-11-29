@@ -7,6 +7,7 @@ const shipperSchema = new Schema({
   direccion: String,
   ciudad: String,
   provincia: String,
+  pais: {type: String, requied:true},
   preferencias: String,
 
   contacto: {

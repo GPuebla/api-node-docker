@@ -1,5 +1,5 @@
 import Booking from "../models/booking.model";
-import Route from "../models/route.model";
+import Port from "../models/port.model";
 import Vessel from "../models/vessel.model";
 import Line from "../models/line.model";
 import Shipper from "../models/shipper.model";
@@ -14,7 +14,7 @@ class BookingService {
 
     // Obtener todos los bookings
     async getAll(){
-        return await Booking.find().Populate("route vessel line shipper consignee");
+        return await Booking.find().Populate("port vessel line shipper consignee");
     }
     
 };
