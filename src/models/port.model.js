@@ -1,9 +1,10 @@
 import mongoose from 'mongoose'
+const { Schema, model } = mongoose;
 
-const portSchema = new mongoose.Schema({
+const portSchema = new Schema({
     name:{type: String, required: true, unique: true},
-    contry: String,
+    country: String,
 })
 
-export default new mongoose.model('Port',portSchema,'port')
+export default model('Port',portSchema,'port')
 

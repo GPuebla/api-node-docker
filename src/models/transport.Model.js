@@ -7,4 +7,4 @@ const transportSchema = new Schema({
   contacto: String
 });
 
-export default model("Transport", transportSchema);
+export default model("Transport", transportSchema, "transport");

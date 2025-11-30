@@ -3,7 +3,7 @@ import Port from "../models/port.model";
 import Vessel from "../models/vessel.model";
 import Line from "../models/line.model";
 import Shipper from "../models/shipper.model";
-import Consignee from "../models/consegnee.model"
+import Consignee from "../models/consignee.model";
 
 class BookingService {
 

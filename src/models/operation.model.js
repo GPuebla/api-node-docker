@@ -1,12 +1,11 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose"
+const { Schema, model } = mongoose;
 
-const operationSchema= new mongoose.Schema(
+const operationSchema= new Schema(
     {
         opNumber: {type: String, required: true, unique:true},
         booking: {type: Number, required: true},
     },
 );
 
-const Operation = mongoose.model("Operation",operationSchema,"operation")
-
-export default Operation;
+export default model("Operation",operationSchema,"operation")

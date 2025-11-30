@@ -7,7 +7,7 @@ const contactSchema = new Schema({
   cel: { type: String, required: true },
   correo: String,
 
-  // 👇 Relación polimórfica
+  // Relación polimórfica
   relatedModel: {
     type: String,
     required: true,
