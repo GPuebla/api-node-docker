@@ -3,20 +3,19 @@ const { Schema, model, Types } = mongoose;
 
 
 const contactSchema = new Schema({
-  nombre: { type: String, required: true },
-  cel: { type: String, required: true },
-  correo: String,
+  name: { type: String, required: true },
+  phone: { type: String, required: true },
+  email: String,
 
-  // Relación polimórfica
   relatedModel: {
     type: String,
     required: true,
-    enum: ["Shipper", "Consignee", "Despachante", "Line"]
+    enum: ["Shipper", "Consignee", "Customs Broker", "Line"]
   },
   relatedId: {
     type: Types.ObjectId,
     required: true,
-    refPath: "relatedModel" // referencia dinámica según el modelo
+    refPath: "relatedModel"
   }
 });
 

@@ -3,10 +3,10 @@ const { Schema, model, Types } = mongoose;
 
 const bookingSchema = new Schema({
   number: { type: String, required: true, unique: true },
-  estado: {
+  state: {
     type: String,
-    enum: ["Pendiente", "Solicitado", "Confirmado"],
-    default: "Pendiente"
+    enum: ["Pending", "Required", "Confirmed"],
+    default: "Pending"
   },
 
   containers: [{ type: Types.ObjectId, ref: "Container"}],

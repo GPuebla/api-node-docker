@@ -5,7 +5,7 @@ const operationSchema= new Schema(
     {
         opNumber: {type: String, required: true, unique:true},
         booking: {type: Number, required: true},
-    },
+    }, { timestamps: true },
 );
 
 export default model("Operation",operationSchema,"operation")

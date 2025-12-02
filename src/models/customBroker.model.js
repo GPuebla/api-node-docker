@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 const {Schema, model, Types} = mongoose;
 
-const despachanteSchema = new Schema({
+const customsBrokerSchema = new Schema({
     companyName: {type:String, required:true, unique:true},
     contacts: { type:[{type:Types.ObjectId, ref: "Contact"}], default:[]}
 });
 
-export default model('Despachante',despachanteSchema,'despachantes');
+export default model('CustomBroker',customsBrokerSchema,'customBroker');
 

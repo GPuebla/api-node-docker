@@ -24,17 +24,18 @@ const containerSchema = new Schema({
     status: {
         type: String,
         enum: [
-            "A Confirmar",
-            "Vacio Retirado",
-            "Cargado",
-            "Ingresado a Stacking",
-            "Extraportuario",
-            "En tránsito",
-            "En puerto destino",
-            "Vacio Devuelto"
+            "To Confirm",        // A Confirmar
+            "Empty Picked Up",   // Vacío Retirado
+            "Loaded",            // Cargado
+            "Stacking In",       // Ingresado a Stacking
+            "Off-Dock",          // Extraportuario
+            "In Transit",        // En tránsito
+            "At Destination Port", // En puerto destino
+            "Empty Returned"     // Vacío Devuelto
         ],
-        default: "A Confirmar"
+        default: "To Confirm"     // A Confirmar
     }
+
 }, {timestamps: true});
 
 export default model("Container",containerSchema,"containers");
