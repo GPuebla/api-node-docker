@@ -7,5 +7,5 @@ const customsBrokerSchema = new Schema({
     contacts: { type:[{type:Types.ObjectId, ref: "Contact"}], default:[]}
 });
 
-export default model('CustomBroker',customsBrokerSchema,'customBroker');
+export default model('CustomBroker',customsBrokerSchema,'customBrokers');
 

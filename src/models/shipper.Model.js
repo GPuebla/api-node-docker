@@ -15,4 +15,4 @@ const shipperSchema = new Schema({
   
 });
 
-export default model("Shipper", shipperSchema);
+export default model("Shipper", shipperSchema,"shippers");

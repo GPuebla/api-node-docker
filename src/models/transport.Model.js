@@ -8,4 +8,4 @@ const transportSchema = new Schema({
   
 });
 
-export default model("Transport", transportSchema, "transport");
+export default model("Transport", transportSchema, "transports");

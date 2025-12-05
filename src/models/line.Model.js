@@ -6,4 +6,4 @@ const lineSchema = new Schema({
   name: { type: String, required: true }
 });
 
-export default model("Line", lineSchema,"line");
+export default model("Line", lineSchema,"lines");

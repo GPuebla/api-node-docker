@@ -6,5 +6,5 @@ const portSchema = new Schema({
     country: String,
 })
 
-export default model('Port',portSchema,'port')
+export default model('Port',portSchema,'ports')
 

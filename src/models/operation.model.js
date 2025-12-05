@@ -8,4 +8,4 @@ const operationSchema= new Schema(
     }, { timestamps: true },
 );
 
-export default model("Operation",operationSchema,"operation")
+export default model("Operation",operationSchema,"operations")
