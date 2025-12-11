@@ -1,12 +1,12 @@
-import containerService from "../services/container.service";
+import bookingService from "../services/booking.service";
 
-class ContainerController {
+class BookingController {
 
   // Crear contenedor
   async create(req, res) {
     try {
-      const container = await containerService.create(req.body);
-      res.status(201).json(container);
+      const booking = await bookingService.create(req.body);
+      res.status(201).json(booking);
     } catch (err) {
       res.status(400).json({ error: err.message });
     }
@@ -15,8 +15,8 @@ class ContainerController {
   // Obtener todos
   async getAll(req, res) {
     try {
-      const containers = await containerService.getAll();
-      res.json(containers);
+      const bookings = await bookingService.getAll();
+      res.json(bookings);
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
@@ -25,8 +25,8 @@ class ContainerController {
   // Obtener por ID
   async getById(req, res) {
     try {
-      const container = await containerService.getById(req.params.id);
-      res.json(container);
+      const booking = await bookingService.getById(req.params.id);
+      res.json(booking);
     } catch (err) {
       res.status(404).json({ error: err.message });
     }
@@ -35,8 +35,8 @@ class ContainerController {
   // Actualizar contenedor
   async update(req, res) {
     try {
-      const container = await containerService.update(req.params.id, req.body);
-      res.json(container);
+      const booking = await bookingService.update(req.params.id, req.body);
+      res.json(booking);
     } catch (err) {
       res.status(400).json({ error: err.message });
     }
@@ -45,8 +45,8 @@ class ContainerController {
   // Obtener por booking
   async getByBooking(req, res) {
     try {
-      const containers = await containerService.getByBooking(req.params.bookingId);
-      res.json(containers);
+      const bookings = await bookingService.getByBooking(req.params.bookingId);
+      res.json(bookings);
     } catch (err) {
       res.status(400).json({ error: err.message });
     }
@@ -55,7 +55,7 @@ class ContainerController {
   // Reasignar settings reefer
   async reassignSettings(req, res) {
     try {
-      const updated = await containerService.reassignSettings(
+      const updated = await bookingService.reassignSettings(
         req.params.id,
         req.body.settings
       );
@@ -68,7 +68,7 @@ class ContainerController {
   // Actualizar estado del contenedor
   async updateStatus(req, res) {
     try {
-      const updated = await containerService.updateStatus(
+      const updated = await bookingService.updateStatus(
         req.params.id,
         req.body.status
       );
@@ -81,7 +81,7 @@ class ContainerController {
   // Obtener por ID
   async deleteById(req, res) {
     try {
-      const deletedCotainer = await containerService.deleteContainer(req.params.id);
+      const deletedCotainer = await bookingService.deleteBooking(req.params.id);
       res.json(deletedCotainer);
     } catch (err) {
       res.status(404).json({ error: err.message });
@@ -90,4 +90,4 @@ class ContainerController {
 
 }
 
-export default new ContainerController();
+export default new BookingController();
