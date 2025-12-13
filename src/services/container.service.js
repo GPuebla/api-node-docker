@@ -25,12 +25,12 @@
 
     // Actualizar contenedor
     async update(id, data) {
-      const updated = await Container.findByIdAndUpdate(id, data, { new: true });
+      const updated = await Container.findByIdAndUpdate(id, data, { new: true, runValidators: true });
       if (!updated) throw new Error("Container not found");
       return updated;
     }
 
-    // Contenedores por booking
+    // Contenedores por booking (el metodo find devuelve un array)
     async getByBooking(bookingId) {
       return await Container.find({ booking: bookingId });
     }

@@ -2,7 +2,7 @@ import bookingService from "../services/booking.service";
 
 class BookingController {
 
-  // Crear contenedor
+  // Creating booking
   async create(req, res) {
     try {
       const booking = await bookingService.create(req.body);
@@ -12,7 +12,7 @@ class BookingController {
     }
   }
 
-  // Obtener todos
+  // Getting all bookings
   async getAll(req, res) {
     try {
       const bookings = await bookingService.getAll();
@@ -22,7 +22,7 @@ class BookingController {
     }
   }
 
-  // Obtener por ID
+  // Getting booking by ID
   async getById(req, res) {
     try {
       const booking = await bookingService.getById(req.params.id);
@@ -32,7 +32,20 @@ class BookingController {
     }
   }
 
-  // Actualizar contenedor
+  // Getting booking by number
+  async getByBookingNumber(req, res) {
+    try {
+      if (!req.params.bookingNumber) {
+      return res.status(400).json({ error: "Booking number is required" });
+      }
+      const booking = await bookingService.getByBookingNumber(req.params.bookingNumber);
+      res.json(booking);
+    } catch (err) {
+      res.status(404).json({ error: err.message });
+    }
+  }
+
+  // Updating booking
   async update(req, res) {
     try {
       const booking = await bookingService.update(req.params.id, req.body);
@@ -42,35 +55,12 @@ class BookingController {
     }
   }
 
-  // Obtener por booking
-  async getByBooking(req, res) {
+  // Actualizar estado del booking
+  async updateBookingState(req, res) {
     try {
-      const bookings = await bookingService.getByBooking(req.params.bookingId);
-      res.json(bookings);
-    } catch (err) {
-      res.status(400).json({ error: err.message });
-    }
-  }
-
-  // Reasignar settings reefer
-  async reassignSettings(req, res) {
-    try {
-      const updated = await bookingService.reassignSettings(
+      const updated = await bookingService.updateState(
         req.params.id,
-        req.body.settings
-      );
-      res.json(updated);
-    } catch (err) {
-      res.status(400).json({ error: err.message });
-    }
-  }
-
-  // Actualizar estado del contenedor
-  async updateStatus(req, res) {
-    try {
-      const updated = await bookingService.updateStatus(
-        req.params.id,
-        req.body.status
+        req.body.state
       );
       res.json(updated);
     } catch (err) {
@@ -81,8 +71,8 @@ class BookingController {
   // Obtener por ID
   async deleteById(req, res) {
     try {
-      const deletedCotainer = await bookingService.deleteBooking(req.params.id);
-      res.json(deletedCotainer);
+      const deletedBooking = await bookingService.deleteBooking(req.params.id);
+      res.json(deletedBooking);
     } catch (err) {
       res.status(404).json({ error: err.message });
     }
