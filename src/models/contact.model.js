@@ -9,12 +9,10 @@ const contactSchema = new Schema({
 
   relatedModel: {
     type: String,
-    required: true,
     enum: ["Shipper", "Consignee", "Customs Broker", "Line"]
   },
   relatedId: {
     type: Types.ObjectId,
-    required: true,
     refPath: "relatedModel"
   }
 });
