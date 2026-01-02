@@ -9,4 +9,4 @@ const consigneeSchema = new Schema({
   contacts: {type:[{type: Types.ObjectId, ref:"Contact"}],default:[]}
 });
 
-export default model("Consignee", consigneeSchema, "consignees");
+export default mongoose.models.Consignee || model("Consignee", consigneeSchema, "consignees");

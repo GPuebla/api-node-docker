@@ -7,4 +7,4 @@ const vesselSchema = new Schema({
   voyage: { type: String, required: true }
 });
 
-export default model("Vessel", vesselSchema,"vessels");
+export default mongoose.models.Vessel || model("Vessel", vesselSchema,"vessels");

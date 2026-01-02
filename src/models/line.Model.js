@@ -6,4 +6,4 @@ const lineSchema = new Schema({
   name: { type: String, required: true }
 });
 
-export default model("Line", lineSchema,"lines");
+export default mongoose.models.Line || model("Line", lineSchema,"lines");

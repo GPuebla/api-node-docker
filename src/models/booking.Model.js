@@ -23,4 +23,4 @@ const bookingSchema = new Schema({
   consignee: { type: Types.ObjectId, ref: "Consignee", required: true }
 }, { timestamps: true });
 
-export default model("Booking", bookingSchema,'bookings');
+export default mongoose.models.Booking || model("Booking", bookingSchema,'bookings');

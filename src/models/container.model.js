@@ -38,5 +38,5 @@ const containerSchema = new Schema({
 
 }, {timestamps: true});
 
-export default model("Container",containerSchema,"containers");
+export default mongoose.models.Container || model("Container",containerSchema,"containers");
 

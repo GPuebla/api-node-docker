@@ -8,4 +8,4 @@ const operationSchema= new Schema(
     }, { timestamps: true },
 );
 
-export default model("Operation",operationSchema,"operations")
+export default mongoose.models.Operation || model("Operation",operationSchema,"operations")

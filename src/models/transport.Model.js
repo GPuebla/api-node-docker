@@ -8,4 +8,4 @@ const transportSchema = new Schema({
   
 });
 
-export default model("Transport", transportSchema, "transports");
+export default mongoose.models.Transport || model("Transport", transportSchema, "transports");

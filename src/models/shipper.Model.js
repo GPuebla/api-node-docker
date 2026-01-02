@@ -15,4 +15,4 @@ const shipperSchema = new Schema({
   
 });
 
-export default model("Shipper", shipperSchema,"shippers");
+export default mongoose.models.Shipper || model("Shipper", shipperSchema,"shippers");

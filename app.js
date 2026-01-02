@@ -5,6 +5,9 @@ import containerRoute from './src/routes/container.route.js';
 import bookingRoute from './src/routes/booking.route.js';
 import consigneeRoute from './src/routes/consignee.route.js';
 import contactRoute from './src/routes/contact.route.js';
+import portRoute from './src/routes/port.route.js';
+import transportRoute from './src/routes/transport.route.js';
+import vesselRoute from './src/routes/vessel.route.js';
 
 const app = express();
 
@@ -16,6 +19,9 @@ app.use("/containers", containerRoute);
 app.use("/bookings", bookingRoute);
 app.use("/consignees", consigneeRoute);
 app.use("/contacts", contactRoute);
+app.use("/ports", portRoute);
+app.use("/transports",transportRoute);
+app.use("/vessels",vesselRoute);
 
 // Middlewares de errores
 app.use(notFound);

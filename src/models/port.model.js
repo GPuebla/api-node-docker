@@ -6,5 +6,5 @@ const portSchema = new Schema({
     country: String,
 })
 
-export default model('Port',portSchema,'ports')
+export default mongoose.models.Port || model('Port',portSchema,'ports')
 
