@@ -101,8 +101,7 @@ import BaseController from "./base.controller.js";
 import containerService from "../services/container.service.js";
 
 // 1️⃣ Crear controller base (CRUD)
-const containerController =
-  BaseController.createBaseController(containerService);
+const containerController = BaseController.createBaseController(containerService);
 
 // 2️⃣ Agregar SOLO métodos custom
 

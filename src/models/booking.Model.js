@@ -23,4 +23,25 @@ const bookingSchema = new Schema({
   consignee: { type: Types.ObjectId, ref: "Consignee", required: true }
 }, { timestamps: true });
 
+/* ===== VIRTUALS ===== */
+bookingSchema.virtual("containersAssigned").get(function () {
+  return this.containers.length;
+});
+
+bookingSchema.virtual("containersPending").get(function () {
+  return this.quantityContainers - this.containers.length;
+});
+
+/* ===== CONFIG ===== */
+bookingSchema.set("toJSON", { virtuals: true });
+bookingSchema.set("toObject", { virtuals: true });
+
+bookingSchema.pre("save", function (next) {
+  if (this.POL.equals(this.POD)) {
+    return next(new Error("POL and POD cannot be the same port"));
+  }
+  next();
+});
+
+
 export default mongoose.models.Booking || model("Booking", bookingSchema,'bookings');

@@ -1,9 +1,6 @@
-import { Router } from 'express';
+import BaseRoute from "../routes/base.route"
 import bookingController from '../controllers/booking.controller';
 
-const router = Router();
-
-router.get('/',bookingController.getAll);
-router.post('/',bookingController.create);
+const router = BaseRoute.createBaseRouter(bookingController);
 
 export default router;

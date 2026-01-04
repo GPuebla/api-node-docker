@@ -8,6 +8,8 @@ import contactRoute from './src/routes/contact.route.js';
 import portRoute from './src/routes/port.route.js';
 import transportRoute from './src/routes/transport.route.js';
 import vesselRoute from './src/routes/vessel.route.js';
+import lineRoute from './src/routes/line.route.js';
+import shipperRoute from './src/routes/shipper.route.js';
 
 const app = express();
 
@@ -22,6 +24,8 @@ app.use("/contacts", contactRoute);
 app.use("/ports", portRoute);
 app.use("/transports",transportRoute);
 app.use("/vessels",vesselRoute);
+app.use("/lines", lineRoute);
+app.use("/shippers", shipperRoute);
 
 // Middlewares de errores
 app.use(notFound);

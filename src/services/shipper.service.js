@@ -1,7 +1,6 @@
+import BaseService from './base.service'
 import Shipper from '../models/shipper.model'
 
-class shipperClass{
-    async create (data){
-        return Shipper.create(data)
-    }
-}
+const shipperService = BaseService.createBaseService(Shipper);
+
+export default shipperService;

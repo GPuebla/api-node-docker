@@ -43,8 +43,8 @@ class BaseService {
 
   //EJEMPLO DE USO
 
-//   const containerService = BaseService.createBaseService(Container, {
-//     populate: "booking transport",
-//   });
+  // const containerService = BaseService.createBaseService(Container, {
+  //   populate: "booking transport",
+  // });
   
 

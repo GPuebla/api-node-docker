@@ -4,7 +4,7 @@ const { Schema, model } = mongoose;
 
 const vesselSchema = new Schema({
   name: { type: String, required: true },
-  voyage: { type: String, required: true }
+  voyage: { type: String}
 });
 
-export default mongoose.models.Vessel || model("Vessel", vesselSchema,"vessels");
+export default mongoose.models.Vessel  || model("Vessel", vesselSchema,"vessels");
