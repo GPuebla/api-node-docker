@@ -4,7 +4,7 @@ const createBookingSchema = Joi.object({
   number: Joi.string().required(),
 
   state: Joi.string()
-    .valid(...bookingStates)
+    .valid("Pending", "Required", "Confirmed")
     .default("Pending"),
 
   containers: Joi.array()
