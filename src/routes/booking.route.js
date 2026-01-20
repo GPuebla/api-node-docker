@@ -1,5 +1,5 @@
-import BaseRoute from "../routes/base.route"
-import bookingController from '../controllers/booking.controller';
+import BaseRoute from "../routes/base.route.js"
+import bookingController from '../controllers/booking.controller.js';
 
 const router = BaseRoute.createBaseRouter(bookingController);
 
