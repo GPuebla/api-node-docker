@@ -1,5 +1,5 @@
-import BaseController from "./base.controller";
-import vesselService from "../services/vessel.service";
+import BaseController from "./base.controller.js";
+import vesselService from "../services/vessel.service.js";
 
 const vesselController = BaseController.createBaseController(vesselService);
 

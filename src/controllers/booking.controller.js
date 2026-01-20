@@ -1,5 +1,5 @@
-import BaseController from "../controllers/base.controller";
-import bookingService from "../services/booking.service";
+import BaseController from "../controllers/base.controller.js";
+import bookingService from "../services/booking.service.js";
 
 const bookingController = BaseController.createBaseController(bookingService);  
 

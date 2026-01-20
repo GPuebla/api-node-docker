@@ -1,5 +1,5 @@
-import BaseController from "./base.controller";
-import transportService from "../services/transport.service";
+import BaseController from "./base.controller.js";
+import transportService from "../services/transport.service.js";
 
 const transportController = BaseController.createBaseController(transportService);
 
