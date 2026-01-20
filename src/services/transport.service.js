@@ -1,5 +1,5 @@
 import BaseService from "./base.service.js";
-import transport from "../models/transport.Model";
+import transport from "../models/transportmodel";
 
 const transportService = BaseService.createBaseService(transport);
 

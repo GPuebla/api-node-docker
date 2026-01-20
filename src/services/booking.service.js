@@ -1,9 +1,9 @@
 import BaseService from "./base.service.js"
-import Booking from "../models/booking.Model.js"
+import Booking from "../models/bookingmodel.js"
 import Port from "../models/port.model.js";
-import Vessel from "../models/vessel.Model.js";
+import Vessel from "../models/vesselmodel.js";
 import Line from "../models/line.model.js";
-import Shipper from "../models/shipper.Model.js";
+import Shipper from "../models/shippermodel.js";
 import Consignee from "../models/consignee.model.js";
 
 // Create booking service using BaseService (generic CRUD)
