@@ -10,6 +10,8 @@ import transportRoute from './src/routes/transport.route.js';
 import vesselRoute from './src/routes/vessel.route.js';
 import lineRoute from './src/routes/line.route.js';
 import shipperRoute from './src/routes/shipper.route.js';
+import userRoute from './src/routes/user.route.js';
+import authRoutes from "./src/routes/auth.route.js";
 
 const app = express();
 
@@ -26,6 +28,8 @@ app.use("/transports",transportRoute);
 app.use("/vessels",vesselRoute);
 app.use("/lines", lineRoute);
 app.use("/shippers", shipperRoute);
+app.use("/users", userRoute);
+app.use("/auth", userRoute);
 
 // Middlewares de errores
 app.use(notFound);

@@ -1,1 +1,22 @@
 Para instalar dependencias: docker compose exec api npm install ...
+
+const users = [
+  {
+    email: "admin@empresa.com",
+    password: "Admin1234",
+    role: "admin",
+    isActive: true
+  },
+  {
+    email: "usuario1@empresa.com",
+    password: "Usuario123",
+    role: "user",
+    isActive: true
+  },
+  {
+    email: "usuario2@empresa.com",
+    password: "Usuario456",
+    role: "user",
+    isActive: false
+  }
+];
