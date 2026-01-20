@@ -1,4 +1,4 @@
-import BaseRoute from "./base.route";
+import BaseRoute from "./base.route.js";
 import lineController from "../controllers/line.controller";
 
 const router = BaseRoute.createBaseRouter(lineController);

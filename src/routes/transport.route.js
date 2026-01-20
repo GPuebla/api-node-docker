@@ -1,4 +1,4 @@
-import BaseRoute from "./base.route";
+import BaseRoute from "./base.route.js";
 import transportController from "../controllers/transport.controller";
 
 const router = BaseRoute.createBaseRouter(transportController);
