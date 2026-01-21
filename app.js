@@ -29,7 +29,7 @@ app.use("/vessels",vesselRoute);
 app.use("/lines", lineRoute);
 app.use("/shippers", shipperRoute);
 app.use("/users", userRoute);
-app.use("/auth", userRoute);
+app.use("/auth", authRoutes);
 
 // Middlewares de errores
 app.use(notFound);
