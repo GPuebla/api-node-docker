@@ -24,7 +24,6 @@ services:
       - .env
     volumes:
       - .:/app
+      - /app/node_modules
     command: npm run docker:dev
     restart: unless-stopped
-
-
