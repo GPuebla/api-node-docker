@@ -64,7 +64,8 @@ class AuthController {
         res.cookie("token", token, {
           httpOnly: true,
           sameSite: "lax",
-          secure: false, // true en prod
+          secure: false,
+          maxAge: 1000 * 60 * 5, // true en prod
         });
 
         return res.redirect("/users");
