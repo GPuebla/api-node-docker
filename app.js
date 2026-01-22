@@ -21,7 +21,7 @@ const app = express();
 
 app.set("view engine","ejs");
 app.set("views", path.join(
-        process.cwd(),"views"
+        process.cwd(),"src","views"
     )
 );
 
