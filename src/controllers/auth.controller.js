@@ -67,7 +67,7 @@ class AuthController {
           secure: false, // true en prod
         });
 
-        return res.redirect("/dashboard");
+        return res.redirect("/users");
       }
 
       // 👉 API
