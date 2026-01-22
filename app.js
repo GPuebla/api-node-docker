@@ -17,7 +17,7 @@ import path from 'path';
 const app = express();
 
 app.set("view engine","ejs");
-app.set("views", path.joi(
+app.set("views", path.join(
         process.cwd(),"src","views"
     )
 );
