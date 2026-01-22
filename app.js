@@ -13,6 +13,9 @@ import shipperRoute from './src/routes/shipper.route.js';
 import userRoute from './src/routes/user.route.js';
 import authRoutes from "./src/routes/auth.route.js";
 import path from 'path';
+import cookieParser from "cookie-parser";
+
+
 
 const app = express();
 
@@ -23,6 +26,8 @@ app.set("views", path.join(
 );
 
 app.use(express.urlencoded({extended:true}));
+
+app.use(cookieParser());
 
 // Middlewares globales
 app.use(express.json());
