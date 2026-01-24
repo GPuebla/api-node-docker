@@ -6,7 +6,10 @@ const router = Router();
 
 // POST auth/login
 router.get("/login", (req,res)=>{
-    res.render("auth/login",{error:null});
+    res.render("auth/login",{
+        title:"Login", 
+        error:null
+    });
 });
 
 router.post("/login", AuthController.login);

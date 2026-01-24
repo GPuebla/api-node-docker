@@ -48,6 +48,13 @@ app.use("/shippers", shipperRoute);
 app.use("/users", userRoute);
 app.use("/auth", authRoutes);
 
+app.get("/", (req,res)=>{
+    res.render("index",{
+        title:"Home",
+        error:null
+    })
+});
+
 // Middlewares de errores
 app.use(notFound);
 app.use(errorHandler);
