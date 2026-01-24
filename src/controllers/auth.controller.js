@@ -35,7 +35,9 @@ class AuthController {
         // Si viene de formulario
         if (req.accepts("html")) {
           return res.status(400).render("auth/login", {
+            layout: false,
             error: "Email y contraseña son obligatorios",
+            title:"Login",
           });
         }
 
@@ -49,8 +51,10 @@ class AuthController {
 
       if (!token) {
         if (req.accepts("html")) {
-          return res.status(401).render("auth/login", {
+          return res.status(401).render("login", {
+            layout: false,
             error: "Credenciales inválidas",
+            title:"Login",
           });
         }
 
@@ -77,8 +81,10 @@ class AuthController {
       console.error(error);
 
       if (req.accepts("html")) {
-        return res.status(500).render("auth/login", {
+        return res.status(500).render("login", {
           error: "Error interno",
+          layout: false,
+          title:"Login",
         });
       }
 
