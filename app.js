@@ -35,18 +35,38 @@ app.use(cookieParser());
 // Middlewares globales
 app.use(express.json());
 
-// Rutas
-app.use("/containers", containerRoute);
-app.use("/bookings", bookingRoute);
-app.use("/consignees", consigneeRoute);
-app.use("/contacts", contactRoute);
-app.use("/ports", portRoute);
-app.use("/transports",transportRoute);
-app.use("/vessels",vesselRoute);
-app.use("/lines", lineRoute);
-app.use("/shippers", shipperRoute);
-app.use("/users", userRoute);
+// API ROUTES
+app.use("api/containers", containerRoute);
+app.use("api/bookings", bookingRoute);
+app.use("api/consignees", consigneeRoute);
+app.use("api/contacts", contactRoute);
+app.use("api/ports", portRoute);
+app.use("api/transports",transportRoute);
+app.use("api/vessels",vesselRoute);
+app.use("api/lines", lineRoute);
+app.use("api/shippers", shipperRoute);
+app.use("api/users", userRoute);
 app.use("/auth", authRoutes);
+
+
+// VIEWS ROUTES
+app.use("/containers", (req,res)=>{res.json({message:"containers"});});
+app.use("/bookings",  (req,res)=>{res.json({message:"bookings"});});
+app.use("/consignees",  (req,res)=>{res.json({message:"consignees"});});
+app.use("/contacts",  (req,res)=>{res.json({message:"contacts"});});
+app.use("/ports",  (req,res)=>{res.json({message:"ports"});});
+app.use("/transports", (req,res)=>{res.json({message:"transports"});});
+app.use("/vessels", (req,res)=>{res.json({message:"vessels"});});
+app.use("/lines",  (req,res)=>{res.json({message:"lines"});});
+app.use("/shippers",  (req,res)=>{res.json({message:"shippers"});});
+app.use("/users",  (req,res)=>{res.json({message:"users"});});
+app.use("/auth", authRoutes);
+
+
+
+
+
+
 
 app.get("/", (req,res)=>{
     res.render("index",{
