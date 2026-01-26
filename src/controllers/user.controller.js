@@ -31,6 +31,10 @@ const userController = BaseController.createBaseController(userService);
  * The response format is decided based on the request's Accept header.
  */
 userController.index = async (req, res) => {
+
+  console.log("Accept header:", req.headers.accept);
+  console.log("Accepts HTML:", req.accepts("html"));
+
   try {
     // Fetch all users from the service layer
     const users = await userService.getAll();
@@ -78,6 +82,7 @@ userController.index = async (req, res) => {
       message: "Internal server error",
     });
   }
+
 };
 
 export default userController;
