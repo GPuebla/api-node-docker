@@ -36,16 +36,16 @@ app.use(cookieParser());
 app.use(express.json());
 
 // API ROUTES
-app.use("api/containers", containerRoute);
-app.use("api/bookings", bookingRoute);
-app.use("api/consignees", consigneeRoute);
-app.use("api/contacts", contactRoute);
-app.use("api/ports", portRoute);
-app.use("api/transports",transportRoute);
-app.use("api/vessels",vesselRoute);
-app.use("api/lines", lineRoute);
-app.use("api/shippers", shipperRoute);
-app.use("api/users", userRoute);
+app.use("/api/containers", containerRoute);
+app.use("/api/bookings", bookingRoute);
+app.use("/api/consignees", consigneeRoute);
+app.use("/api/contacts", contactRoute);
+app.use("/api/ports", portRoute);
+app.use("/api/transports",transportRoute);
+app.use("/api/vessels",vesselRoute);
+app.use("/api/lines", lineRoute);
+app.use("/api/shippers", shipperRoute);
+app.use("/api/users", userRoute);
 app.use("/auth", authRoutes);
 
 
