@@ -5,23 +5,18 @@
     <tr>
       <th>Id</th>
       <th>Email</th>
+      <th>Password</th>
       <th>Role</th>
     </tr>
   </thead>
 
   <tbody>
-    <% if (users && users.length > 0) { %>
-      <% users.forEach(user => { %>
         <tr>
           <td><%= user._id %></td>
           <td><%= user.email %></td>
+          <td><%= user.password %></td>
           <td><%= user.role %></td>
         </tr>
-      <% }) %>
-    <% } else { %>
       <tr>
-        <td colspan="2">No users found</td>
-      </tr>
-    <% } %>
   </tbody>
 </table>
