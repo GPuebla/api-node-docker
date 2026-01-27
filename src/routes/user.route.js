@@ -4,6 +4,4 @@ import authenticate from "../middlewares/auth.middleware.js";
 
 const router = BaseRoute.createBaseRouter(userController,[authenticate]);
 
-router.get("/", userController.index);
-
 export default router;

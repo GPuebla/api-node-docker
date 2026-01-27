@@ -1,4 +1,9 @@
 import express from 'express';
+import path from 'path';
+import cookieParser from "cookie-parser";
+import expressLayouts from "express-ejs-layouts"
+
+//API
 import notFound from './src/middlewares/notFound.middleware.js';
 import errorHandler from './src/middlewares/error.middleware.js';
 import containerRoute from './src/routes/container.route.js';
@@ -12,9 +17,12 @@ import lineRoute from './src/routes/line.route.js';
 import shipperRoute from './src/routes/shipper.route.js';
 import userRoute from './src/routes/user.route.js';
 import authRoutes from "./src/routes/auth.route.js";
-import path from 'path';
-import cookieParser from "cookie-parser";
-import expressLayouts from "express-ejs-layouts"
+
+//VIEWS
+import userViewRoute from './src/routes/user.view.route.js'
+
+
+
 
 
 
@@ -59,13 +67,7 @@ app.use("/transports", (req,res)=>{res.json({message:"transports"});});
 app.use("/vessels", (req,res)=>{res.json({message:"vessels"});});
 app.use("/lines",  (req,res)=>{res.json({message:"lines"});});
 app.use("/shippers",  (req,res)=>{res.json({message:"shippers"});});
-app.use("/users",  (req,res)=>{res.json({message:"users"});});
-app.use("/auth", authRoutes);
-
-
-
-
-
+app.use("/users",userViewRoute);
 
 
 app.get("/", (req,res)=>{
