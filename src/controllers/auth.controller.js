@@ -51,7 +51,7 @@ class AuthController {
 
       if (!token) {
         if (req.accepts("html")) {
-          return res.status(401).render("login", {
+          return res.status(401).render("auth/login", {
             layout: false,
             error: "Credenciales inválidas",
             title:"Login",
@@ -81,7 +81,7 @@ class AuthController {
       console.error(error);
 
       if (req.accepts("html")) {
-        return res.status(500).render("login", {
+        return res.status(500).render("auth/login", {
           error: "Error interno",
           layout: false,
           title:"Login",
