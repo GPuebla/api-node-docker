@@ -8,6 +8,6 @@ const createPortSchema = Joi.object({
 const updatePortSchema = Joi.object({
     name:Joi.string(),
     country:Joi.string(),
-});
+}).min(1); // 🔴 At least one field is required for update
 
 export default {createPortSchema, updatePortSchema};

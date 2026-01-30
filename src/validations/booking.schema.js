@@ -1,7 +1,8 @@
-import join, { string } from 'joi';
+import Joi, { string } from 'joi';
 
 const createBookingSchema = Joi.object({
-  number: Joi.string().required(),
+  number: Joi.string()
+    .required(),
 
   state: Joi.string()
     .valid("Pending", "Required", "Confirmed")
@@ -52,7 +53,7 @@ const updateBookingSchema = Joi.object({
 
   shipper: objectId,
   consignee: objectId,
-})
+}).min(1) // 🔴 At least one field is required for update
 .custom((value, helpers) => {
   if (value.POL && value.POD && value.POL === value.POD) {
     return helpers.error("any.invalid", {
