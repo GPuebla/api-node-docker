@@ -1,4 +1,4 @@
-import Join from "joi";
+import Joi from "joi";
 
 // const createShipperSchema = Joi.object({
 //     name:Joi.string().required(),
@@ -8,6 +8,6 @@ import Join from "joi";
 // const updateShipperSchema = Joi.object({
 //     name:Joi.string(),
 //     country:Joi.string(),
-// });
+// }).min(1); // 🔴 At least one field is required for update;
 
 export default {createShipperSchema, updateShipperSchema};
