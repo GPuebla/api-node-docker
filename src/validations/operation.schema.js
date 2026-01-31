@@ -29,4 +29,4 @@ const updateOperationSchema = Joi.object({
     
 });
 
-export default {createOperationSchema,createOperationSchema};
+export default {createOperationSchema,updateOperationSchema};

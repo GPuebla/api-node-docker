@@ -44,4 +44,5 @@ const updateUserSchema = Joi.object({
   }
   return value;
 });
+
 export default {createUserSchema, updateUserSchema};
