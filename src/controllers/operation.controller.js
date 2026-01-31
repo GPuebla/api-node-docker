@@ -1,8 +1,8 @@
-import BaseController from "./base.controller.js";
-import operationService from "../services/operation.service.js";
-import Counter from "../models/counter.model.js";
+// import BaseController from "./base.controller.js";
+// import operationService from "../services/operation.service.js";
+// import Counter from "../models/counter.model.js";
 
-const operationController = BaseController.createBaseController(operationService);
+// const operationController = BaseController.createBaseController(operationService);
 
 //PUT /operations/:id/confirm
 
@@ -40,4 +40,4 @@ const operationController = BaseController.createBaseController(operationService
 //   }
 // };
 
-export default {operationController};
+// export default {operationController};

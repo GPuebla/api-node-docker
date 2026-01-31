@@ -1,8 +1,10 @@
-import mongoose from "mongoose";
-import Transport from './transport.model.js';
-import Booking from './booking.model.js';
-const { Schema, model, Types } = mongoose;
+// import mongoose from "mongoose";
+// import Transport from './transport.model.js';
+// import Booking from './booking.model.js';
+// const { Schema, model, Types } = mongoose;
 
+
+/*
 const operationSchema = new Schema(
   {
     // Official operation number (assigned only after confirmation)
@@ -50,3 +52,4 @@ const operationSchema = new Schema(
 
 export default mongoose.models.Operation ||
   model("Operation", operationSchema, "operations");
+*/
