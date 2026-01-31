@@ -6,11 +6,11 @@ const router = BaseRoute.createBaseRouter(
     operationController, [authenticate]
 );
 
-// 🔹 Business action: confirm operation
-router.put(
-  "/:id/confirm",
-  authenticate,
-  operationController.confirm
-);
+// // 🔹 Business action: confirm operation
+// router.put(
+//   "/:id/confirm",
+//   authenticate,
+//   operationController.confirm
+// );
 
 export default router;
