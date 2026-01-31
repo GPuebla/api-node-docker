@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import {Transport} from './transport.model.js';
-import {Booking} from './booking.model.js';
+import Transport from './transport.model.js';
+import Booking from './booking.model.js';
 const { Schema, model, Types } = mongoose;
 
 const operationSchema = new Schema(
