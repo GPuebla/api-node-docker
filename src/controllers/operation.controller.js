@@ -7,7 +7,7 @@ const operationController = BaseController.createBaseController(operationService
 // PUT /operations/:id/confirm
 
 
-operationController.confirmOperation = async (req, res, next) => {
+operationController.confirm = async (req, res, next) => {
   try {
     const operation = await Operation.findById(req.params.id);
 
@@ -40,4 +40,4 @@ operationController.confirmOperation = async (req, res, next) => {
   }
 };
 
-export default {operationController};
+export default operationController;
