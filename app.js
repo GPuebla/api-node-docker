@@ -16,13 +16,11 @@ import vesselRoute from './src/routes/vessel.route.js';
 import lineRoute from './src/routes/line.route.js';
 import shipperRoute from './src/routes/shipper.route.js';
 import userRoute from './src/routes/user.route.js';
+import operationRoute from './src/routes/operation.route.js';
 import authRoutes from "./src/routes/auth.route.js";
 
 //VIEWS
 import userViewRoute from './src/routes/user.view.route.js'
-
-
-
 
 
 
@@ -45,6 +43,7 @@ app.use(express.json());
 
 // API ROUTES
 app.use("/api/containers", containerRoute);
+app.use("/api/operations", operationRoute);
 app.use("/api/bookings", bookingRoute);
 app.use("/api/consignees", consigneeRoute);
 app.use("/api/contacts", contactRoute);
