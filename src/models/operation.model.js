@@ -51,4 +51,3 @@ const operationSchema = new Schema(
 
 export default mongoose.models.Operation ||
   model("Operation", operationSchema, "operations");
-*/
