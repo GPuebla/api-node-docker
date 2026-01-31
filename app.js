@@ -43,7 +43,7 @@ app.use(express.json());
 
 // API ROUTES
 app.use("/api/containers", containerRoute);
-app.use("/api/operations", operationRoute);
+// app.use("/api/operations", operationRoute);
 app.use("/api/bookings", bookingRoute);
 app.use("/api/consignees", consigneeRoute);
 app.use("/api/contacts", contactRoute);
