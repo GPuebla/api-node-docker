@@ -8,7 +8,7 @@ import Consignee from "../models/consignee.model.js";
 
 // Create booking service using BaseService (generic CRUD)
 const bookingService = BaseService.createBaseService(Booking, {
-  populate: "POL POD vessel line shipper consignee",
+  populate: "POL POD vessel line shipper consignee containers",
 });
 
 /* =========================
@@ -19,7 +19,7 @@ const bookingService = BaseService.createBaseService(Booking, {
 bookingService.getByBookingNumber = async (number) => {
   const booking = await Booking
     .findOne({ number })
-    .populate("POL POD vessel line shipper consignee");
+    .populate("POL POD vessel line shipper consignee containers");
 
   if (!booking) {
     throw new Error("Booking not found");
