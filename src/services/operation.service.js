@@ -12,8 +12,7 @@ const operationService = BaseService.createBaseService(Operation, {
         path: "booking",
         populate: "POL POD vessel line shipper consignee"
       },
-      { path: "transport" },
-      { path: "container" }
+      { path: "transport" }
     ]
   });
 

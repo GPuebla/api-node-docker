@@ -35,12 +35,6 @@ const operationSchema = new Schema(
       default: [],
     },
 
-    // Assigned container (once the operation is active)
-    container: {type:[{
-      type: Types.ObjectId,
-      ref: "Container"}],
-      default: [],
-    },
   },
   {
     timestamps: true,
