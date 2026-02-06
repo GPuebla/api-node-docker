@@ -38,7 +38,7 @@ app.set("layout", "layouts/main")
 app.use(express.urlencoded({extended:true}));
 app.use(expressLayouts)
 app.use(cookieParser());
-app.use(cors()); // Enables Cors for all routes
+app.use(cors()); // Enables Cors for all routes and origins
 
 // Middlewares globales
 app.use(express.json());
