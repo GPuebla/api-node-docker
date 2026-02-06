@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const createShipperSchema = Joi.object({
+const createContactSchema = Joi.object({
     name: Joi.string()
     .min(3)
     .max(50)
@@ -13,14 +13,9 @@ const createShipperSchema = Joi.object({
     email: Joi.string()
     .email()
     .required(),
-
-    address: Joi.string()
-    .max(100)
-    .optional(),
-    
 });
 
-const updateShipperSchema = Joi.object({
+const updateContactSchema = Joi.object({
     name: Joi.string()
     .min(3)
     .max(50),
@@ -31,9 +26,6 @@ const updateShipperSchema = Joi.object({
     email: Joi.string()
     .email(),
 
-    address: Joi.string()
-    .max(100),
-
 }).min(1);
 
-export default {createShipperSchema, updateShipperSchema};
+export default {createContactSchema, updateContactSchema};
