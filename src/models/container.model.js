@@ -19,8 +19,6 @@ const containerSchema = new Schema({
 
     booking: {type: Types.ObjectId, ref:"Booking", default:null},
 
-    transport: {type: Types.ObjectId, ref:"Transport", default:null},
-
     status: {
         type: String,
         enum: [
@@ -38,5 +36,61 @@ const containerSchema = new Schema({
 
 }, {timestamps: true});
 
+// Middleware to store previous booking before save operations
+containerSchema.pre("save", async function (next) {
+if (!this.isModified("booking")) return next();
+if (this.isNew) return next();
+
+const prev = await this.constructor
+    .findById(this._id)
+    .select("booking");
+
+// Store previous booking in locals for use in post middleware
+this.$locals.prevBooking = prev?.booking || null;
+
+next();
+});
+
+// Middleware to handle booking updates on save
+containerSchema.post("save", async function () {
+const prevBookingId = this.$locals.prevBooking;
+const newBookingId = this.booking;
+
+// Remove from previous booking
+    if (prevBookingId && !prevBookingId.equals(newBookingId)) {
+        await mongoose.model("Booking").findByIdAndUpdate(prevBookingId, {
+        $pull: { containers: this._id },
+        });
+    }
+
+// Add to new booking
+    if (newBookingId) {
+        await mongoose.model("Booking").findByIdAndUpdate(newBookingId, {
+        $addToSet: { containers: this._id },
+        });
+    }
+});
+
+  // Middleware to handle booking updates on findOneAndUpdate
+containerSchema.post("findOneAndUpdate", async function (doc) {
+if (!doc) return;
+
+const prevBookingId = this.getOptions().locals?.prevBooking;
+const newBookingId = doc.booking;
+
+if (prevBookingId && !prevBookingId.equals(newBookingId)) {
+    await mongoose.model("Booking").findByIdAndUpdate(prevBookingId, {
+    $pull: { containers: doc._id },
+    });
+}
+
+if (newBookingId) {
+    await mongoose.model("Booking").findByIdAndUpdate(newBookingId, {
+    $addToSet: { containers: doc._id },
+    });
+}
+});
+  
+  
 export default mongoose.models.Container || model("Container",containerSchema,"containers");
 

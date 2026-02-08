@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-import Transport from './transport.model.js';
-import Booking from './booking.model.js';
+
 const { Schema, model, Types } = mongoose;
 
 
@@ -36,12 +35,6 @@ const operationSchema = new Schema(
       default: [],
     },
 
-    // Assigned container (once the operation is active)
-    container: {type:[{
-      type: Types.ObjectId,
-      ref: "Container"}],
-      default: [],
-    },
   },
   {
     timestamps: true,

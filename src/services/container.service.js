@@ -2,7 +2,7 @@ import BaseService from "./base.service.js";
 import Container from "../models/container.model.js";
 
 const containerService = BaseService.createBaseService(Container, {
-  populate: "booking transport",
+  populate: "booking",
 });
 
 /* =========================

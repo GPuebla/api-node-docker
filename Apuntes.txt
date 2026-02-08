@@ -20,3 +20,16 @@ const users = [
     isActive: false
   }
 ];
+
+{
+  "number": "BK-1002",
+  "state": "Required",
+  "containers": [],
+  "quantityContainers": 1,
+  "POL":"69583eba6e3734e5a95621ae",
+  "POD":"69583eba6e3734e5a95621af",
+  "vessel":"6959e9d3d85fa87ac95c0f06",
+  "line": "6959f2ed3d574110402c33c9",
+  "shipper":"6959f922676c0f6b1c0b3879",
+  "consignee": "6950aa9661727d2ba598abe8"
+}
