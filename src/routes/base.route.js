@@ -17,22 +17,63 @@
 // export default new BaseRouter();
 
 
-import { Router } from "express";
+// import { Router } from "express";
+
+// class BaseRouter {
+//   /**
+//    * controller: el controller con métodos CRUD
+//    * middlewares: array de middlewares que se aplican a todas las rutas (opcional)
+//    */
+//   createBaseRouter = (controller, middlewares = []) => {
+//     const router = Router();
+
+//     // Aplica middlewares a cada ruta
+//     router.post("/", ...middlewares, controller.create);
+//     router.get("/", ...middlewares, controller.getAll);
+//     router.get("/:id", ...middlewares, controller.getById);
+//     router.put("/:id", ...middlewares, controller.update);
+//     router.delete("/:id", ...middlewares, controller.remove);
+
+//     return router;
+//   };
+// }
+
+// export default new BaseRouter();
+
 
 class BaseRouter {
-  /**
-   * controller: el controller con métodos CRUD
-   * middlewares: array de middlewares que se aplican a todas las rutas (opcional)
-   */
-  createBaseRouter = (controller, middlewares = []) => {
+  createBaseRouter = (controller, middlewares = {}) => {
     const router = Router();
 
-    // Aplica middlewares a cada ruta
-    router.post("/", ...middlewares, controller.create);
-    router.get("/", ...middlewares, controller.getAll);
-    router.get("/:id", ...middlewares, controller.getById);
-    router.put("/:id", ...middlewares, controller.update);
-    router.delete("/:id", ...middlewares, controller.remove);
+    router.post(
+      "/",
+      ...(middlewares.create || []),
+      controller.create
+    );
+
+    router.get(
+      "/",
+      ...(middlewares.getAll || []),
+      controller.getAll
+    );
+
+    router.get(
+      "/:id",
+      ...(middlewares.getById || []),
+      controller.getById
+    );
+
+    router.put(
+      "/:id",
+      ...(middlewares.update || []),
+      controller.update
+    );
+
+    router.delete(
+      "/:id",
+      ...(middlewares.remove || []),
+      controller.remove
+    );
 
     return router;
   };

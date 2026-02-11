@@ -1,6 +1,9 @@
 import Joi from "joi";
 
-export const objectId = Joi.string().hex().length(24);
+export const objectId = Joi.string().hex().length(24).messages({
+    "string.hex": "Invalid ObjectId format",
+    "string.length": "ObjectId must be 24 characters",
+  });
 
 export const email = Joi.string()
   .email()
