@@ -20,4 +20,4 @@ const updateVesselSchema = Joi.object({
     .max(50),
 }).min(1);
 
-export default {creatVesselSchema, updateVesselSchema};
+export default {createVesselSchema, updateVesselSchema};

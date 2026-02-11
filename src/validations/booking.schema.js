@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { objectId } from "./common.validation.js";
+import { objectId } from "./index.js";
 
 const createBookingSchema = Joi.object({
   number: Joi.string()
