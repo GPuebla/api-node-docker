@@ -5,6 +5,7 @@ import validateRefs from "../middlewares/validateRefs.middleware.js";
 
 import bookingController from '../controllers/booking.controller.js';
 import bookingSchema from "../validations/booking.schema.js";
+
 import { idParamSchema } from "../validations/params.schema.js";
 
 //Models
@@ -40,7 +41,7 @@ const router = BaseRoute.createBaseRouter(bookingController, {
       consignee: Consignee
     })
   ],
-  
+
   getById: [validate(idParamSchema, "params")]
 });
 
