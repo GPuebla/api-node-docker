@@ -1,4 +1,4 @@
-// import { Router } from "express";
+import { Router } from "express";
 
 // class BaseRouter {
 //   createBaseRouter = (controller) => {
@@ -16,8 +16,6 @@
 
 // export default new BaseRouter();
 
-
-// import { Router } from "express";
 
 // class BaseRouter {
 //   /**
