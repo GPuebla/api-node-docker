@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const creatVesselSchema = Joi.object({
+const createVesselSchema = Joi.object({
     name: Joi.string()
     .min(3)
     .max(50)
