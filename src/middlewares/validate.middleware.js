@@ -20,3 +20,5 @@ const validate = (schema, property = "body") => {
     
     };
 };
+
+export default validate;

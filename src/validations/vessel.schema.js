@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const creatVesselSchema = Joi.object({
+const createVesselSchema = Joi.object({
     name: Joi.string()
     .min(3)
     .max(50)
@@ -20,4 +20,4 @@ const updateVesselSchema = Joi.object({
     .max(50),
 }).min(1);
 
-export default {creatVesselSchema, updateVesselSchema};
+export default {createVesselSchema, updateVesselSchema};

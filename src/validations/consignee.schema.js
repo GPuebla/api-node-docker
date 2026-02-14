@@ -1,5 +1,5 @@
 import Joi from "joi";
-import {objetcId} from "./custom.validation.js";
+import { objectId } from "./index.js";
 
 const createConsigneeSchema = Joi.object({
     name: Joi.string()
@@ -15,10 +15,8 @@ const createConsigneeSchema = Joi.object({
     .max(50)
     .optional(),  
 
-    contacts: Joi.array()
-    .items(Joi.string()
-    .custom(objetcId))
-    .optional(),
+    contacts: objectId
+    .required()
 });
 
 const updateConsigneeSchema = Joi.object({
@@ -32,9 +30,8 @@ const updateConsigneeSchema = Joi.object({
     country: Joi.string()
     .max(50),
 
-    contacts: Joi.array()
-    .items(Joi.string()
-    .custom(objetcId)),
+    contacts: objectId
+
 }).min(1);
 
 export default {createConsigneeSchema, updateConsigneeSchema};
