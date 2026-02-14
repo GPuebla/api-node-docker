@@ -7,13 +7,21 @@ import Operation from "../models/operation.model.js";
 // );
 
 const operationService = BaseService.createBaseService(Operation, {
-    populate: [
-      {
-        path: "booking",
-        populate: "POL POD vessel line shipper consignee containers"
-      },
-      { path: "transport" }
-    ]
-  });
+  populate: [
+    {
+      path: "booking",
+      populate: [
+        { path: "POL" },
+        { path: "POD" },
+        { path: "vessel" },
+        { path: "line" },
+        { path: "shipper" },
+        { path: "consignee" },
+        { path: "containers" }
+      ]
+    },
+    { path: "transport" }
+  ]
+});
 
 export default operationService;
