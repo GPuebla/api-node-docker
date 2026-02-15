@@ -11,6 +11,7 @@ const operationSchema = new Schema(
       unique: true,
       sparse: true, // allows multiple null values with unique index
       index: true,
+      default:null,
     },
 
     // Current business status of the operation
